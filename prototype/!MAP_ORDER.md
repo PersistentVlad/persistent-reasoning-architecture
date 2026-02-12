@@ -1,3 +1,4 @@
+```
 prototype/
 ├── !README.md
 ├── design_constraints.md
@@ -13,3 +14,4 @@ prototype/
     ├── commit_gate.py
     ├── inference_stub.py
     └── run_minimal_loop.py
+```
