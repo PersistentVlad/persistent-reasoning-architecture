@@ -24,7 +24,7 @@ If this prototype feels *underpowered*, *limited* or *unsatisfying* — **that i
 ## Reading Order and Map
 ```
 prototype/
-├── !README.md
+├── README.md
 ├── design_constraints.md
 ├── minimal_components.md
 ├── execution_loop.md
@@ -39,6 +39,7 @@ prototype/
     ├── inference_stub.py
     └── run_minimal_loop.py
 ```
+
 ---
 
 ## Why This Prototype Exists
