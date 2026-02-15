@@ -1,0 +1,32 @@
+# Appendix
+
+This is a series of **Controlled Architectural Experiments** in **Persistent Reasoning**.
+Each Appendix is ​​an isolated puzzle, not a system. It's Boundary Proof, not a Product.
+
+Appendix materials extend, contextualize, or stress-test the core architecture.
+They do not define it.
+
+The goal is not to demonstrate capability.
+The goal is to remove ambiguity.
+
+Each piece moves the architecture one step closer to something that could survive production -
+not by becoming more powerful, but by becoming more disciplined.
+
+---
+
+## Structure
+
+- A0 — Identity Skeleton (boundary proof)
+
+---
+
+## Reading Order and Directory Structure
+
+```
+appendix/
+├── README.md
+└── A0_identity_skeleton/
+
+```
+
+---
