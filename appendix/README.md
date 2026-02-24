@@ -16,7 +16,10 @@ not by becoming more powerful, but by becoming more disciplined.
 
 ## Structure
 
-- A0 — Identity Skeleton (boundary proof)
+Appendix Series Map:
+BLOCK I — Structural Foundations
+* A0: Identity Skeleton → Proof of boundary.
+* A1: Identity Formalization & Merge Scenarios → Proof of structural consistency.
 
 ---
 
@@ -25,7 +28,8 @@ not by becoming more powerful, but by becoming more disciplined.
 ```
 appendix/
 ├── README.md
-└── A0_identity_skeleton/
+├── A0_identity_skeleton/
+└── A1_identity_formalization/
 
 ```
 
