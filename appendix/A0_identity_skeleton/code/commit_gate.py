@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/commit_gate.py
 
 """
-commit_gate.py
+Appendix A0 — Identity Skeleton (code)
 
 Commit Gate (Governance Role):
 - Decides whether a validated proposal should become persistent.

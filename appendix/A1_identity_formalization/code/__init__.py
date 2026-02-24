@@ -1,4 +1,7 @@
+# Copyright (c) 2026 Vladislav Bliznyukov
+# Licensed under the MIT License.
 # persistent-reasoning-architecture/appendix/A1_identity_formalization/code/__init__.py
+
 """
 Appendix A1 — Identity Formalization & Merge Scenarios (code)
 

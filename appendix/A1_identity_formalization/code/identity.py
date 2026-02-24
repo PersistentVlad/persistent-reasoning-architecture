@@ -1,4 +1,7 @@
+# Copyright (c) 2026 Vladislav Bliznyukov
+# Licensed under the MIT License.
 # persistent-reasoning-architecture/appendix/A1_identity_formalization/code/identity.py
+
 from __future__ import annotations
 
 from dataclasses import dataclass

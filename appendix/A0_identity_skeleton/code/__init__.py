@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/__init__.py
 
 """
-__init__.py
+Appendix A0 — Identity Skeleton (code)
 
 Minimal, constraint-first implementation scaffold for the Persistent Reasoning
 prototype.

@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/write_barrier.py
 
 """
-write_barrier.py
+Appendix A0 — Identity Skeleton (code)
 
 The write barrier is the single architectural choke point where persistent
 structures may change.

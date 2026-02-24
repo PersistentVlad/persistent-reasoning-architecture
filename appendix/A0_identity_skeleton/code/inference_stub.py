@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/inference_stub.py
 
 """
-inference_stub.py
+Appendix A0 — Identity Skeleton (code)
 
 Inference (Execution Role) in the prototype.
 

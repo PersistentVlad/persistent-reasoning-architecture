@@ -1,8 +1,11 @@
+# Copyright (c) 2026 Vladislav Bliznyukov
+# Licensed under the MIT License.
 # persistent-reasoning-architecture/appendix/A1_identity_formalization/code/demo_merge_scenarios.py
+
 from __future__ import annotations
 
 """
-Demo: Identity Formalization & Merge Scenarios (A1)
+Appendix A1 — Identity Formalization & Merge Scenarios (code)
 
 What this script demonstrates (at a toy level):
 - Append-only lineage with branching

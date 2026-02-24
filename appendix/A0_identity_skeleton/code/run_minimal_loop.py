@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/run_minimal_loop.py
 
 """
-run_minimal_loop.py
+Appendix A0 — Identity Skeleton (code)
 
 A minimal executable loop wiring together:
 - PersistentStore (append-only structure)

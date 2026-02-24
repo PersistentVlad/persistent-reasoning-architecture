@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Vladislav Bliznyukov
+# Licensed under the MIT License.
 # persistent-reasoning-architecture/appendix/A1_identity_formalization/code/canonicalization.py
 
 # IMPORTANT:

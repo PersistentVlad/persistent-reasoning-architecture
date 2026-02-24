@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/proposal_engine.py
 
 """
-proposal_engine.py
+Appendix A0 — Identity Skeleton (code)
 
 Proposal Engine (Role):
 - Generates candidate revisions to a persistent structure.

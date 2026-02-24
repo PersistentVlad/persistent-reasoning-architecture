@@ -1,8 +1,9 @@
 # Copyright (c) 2026 Vladislav Bliznyukov
 # Licensed under the MIT License.
+# persistent-reasoning-architecture/appendix/A0_identity_skeleton/code/persistent_store.py
 
 """
-persistent_store.py
+Appendix A0 — Identity Skeleton (code)
 
 A minimal append-only store for Persistent Reasoning structures.
 
