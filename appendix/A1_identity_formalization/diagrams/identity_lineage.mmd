@@ -1,0 +1,35 @@
+%% persistent-reasoning-architecture/appendix/A1_identity_formalization/diagrams/identity_lineage.mmd
+flowchart TD
+  %% Identity + lineage as separate from payload
+  subgraph Legend["Legend"]
+    L1["I(E) = immutable identity anchor"]:::note
+    L2["Vn = version node (append-only)"]:::note
+    L3["payload = opaque (not identity)"]:::note
+  end
+
+  classDef note fill:#f5f5f5,stroke:#999,color:#222;
+
+  %% One entity, many versions
+  subgraph EntityE["Entity E (same identity across time)"]
+    I["Identity Anchor I(E)"]:::note
+
+    V0["V0 (genesis)\ncommit: c0\npayload: opaque"]:::v
+    V1["V1\ncommit: c1\npayload: opaque"]:::v
+    V2["V2\ncommit: c2\npayload: opaque"]:::v
+    V3["V3\ncommit: c3\npayload: opaque"]:::v
+  end
+
+  classDef v fill:#ffffff,stroke:#333,color:#111;
+
+  I -->|anchors| V0
+  I -->|anchors| V1
+  I -->|anchors| V2
+  I -->|anchors| V3
+
+  V0 -->|append-only| V1
+  V1 -->|append-only| V2
+  V2 -->|append-only| V3
+
+  %% Explicit note: identity does not change when payload changes
+  N["Invariant: payload may change,\nidentity must not."]:::note
+  V2 -.-> N

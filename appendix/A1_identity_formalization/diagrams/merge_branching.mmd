@@ -1,0 +1,40 @@
+%% persistent-reasoning-architecture/appendix/A1_identity_formalization/diagrams/merge_branching.mmd
+flowchart TD
+  %% Branching + merge preserves parent references
+  classDef v fill:#ffffff,stroke:#333,color:#111;
+  classDef gate fill:#f5f5f5,stroke:#666,color:#111;
+  classDef bad fill:#ffecec,stroke:#cc0000,color:#660000;
+  classDef note fill:#f5f5f5,stroke:#999,color:#222;
+
+  subgraph Base["Base Lineage (append-only)"]
+    V0["V0\nc0"]:::v
+    V1["V1\nc1"]:::v
+    V2["V2\nc2"]:::v
+    V0 --> V1 --> V2
+  end
+
+  subgraph BranchA["Branch A (proposal path)"]
+    A3["A3\nc3a"]:::v
+    A4["A4\nc4a"]:::v
+    V2 --> A3 --> A4
+  end
+
+  subgraph BranchB["Branch B (proposal path)"]
+    B3["B3\nc3b"]:::v
+    B4["B4\nc4b"]:::v
+    V2 --> B3 --> B4
+  end
+
+  G["Commit Gate\n(explicit merge decision)"]:::gate
+  A4 --> G
+  B4 --> G
+
+  M["M5 (merge)\ncommit: c5\nparents: {A4,B4}\nresolution: explicit"]:::v
+  G --> M
+
+  %% Forbidden merge shortcut
+  X["FORBIDDEN:\n'Select winner' overwrite\n(drop one parent)"]:::bad
+  G -.-> X
+
+  N["Rule: merge must preserve\nboth parents in lineage.\nNo silent overwrite."]:::note
+  M -.-> N
