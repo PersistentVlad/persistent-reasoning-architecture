@@ -6,7 +6,6 @@
 
 https://vladislavbliznyukov.medium.com/persistent-reasoning-appendix-2-hieroglyphic-calculator-ea4934a12984
 
----
 
 ## Purpose
 
@@ -21,7 +20,6 @@ Its purpose is not to build a computational engine, but to demonstrate that stru
 
 This appendix serves as a proof that invalid reasoning steps can become structurally impossible when invariants are externalized and guarded.
 
----
 
 ## Scope
 
@@ -41,7 +39,6 @@ It does not attempt to:
 
 Arithmetic is used strictly as a minimal and controlled boundary domain.
 
----
 
 ## Directory Structure
 
@@ -79,7 +76,6 @@ appendix/A2_hieroglyphic_calculator/
 	   └── run_03_wrong_path_solver.txt
 ```
 
----
 
 ## What Is Being Tested
 
@@ -92,7 +88,6 @@ This appendix tests whether:
 
 It is not testing numerical performance or computational completeness.
 
----
 
 ## Assumptions
 
@@ -107,7 +102,6 @@ The Hieroglyphic Calculator operates under the following assumptions:
 
 Concurrency, distributed reasoning, and semantic reconciliation are out of scope.
 
----
 
 ## Evaluation Criteria
 
@@ -127,7 +121,6 @@ A sequence fails if:
 
 Failure is defined structurally, not numerically.
 
----
 
 ## What This Appendix Does Not Redefine
 
@@ -145,7 +138,6 @@ It preserves the structural envelope within which calculation is allowed.
 
 Primitive computation must be delegated to deterministic external systems.
 
----
 
 ## Architectural Impact
 
@@ -162,7 +154,6 @@ Does Not Redefine:
 - Domain-specific solvers
 - External algorithmic services
 
----
 
 ## Closing
 

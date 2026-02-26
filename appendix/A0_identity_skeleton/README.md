@@ -5,7 +5,6 @@
 
 https://vladislavbliznyukov.medium.com/persistent-reasoning-appendix-0-identity-skeleton-d258fcacd341
 
----
 
 ## Purpose
 
@@ -16,7 +15,6 @@ Only governance may commit.
 
 This appendix exists to validate structural identity preservation under repeated inference cycles.
 
----
 
 ## Scope
 
@@ -29,7 +27,6 @@ This prototype:
 
 It does not implement semantic identity resolution or distributed coordination.
 
----
 
 ## Directory Structure
 
@@ -46,7 +43,6 @@ appendix/A0_identity_skeleton/
     └── run_minimal_loop.py
 ```
 
----
 
 ## What Is Being Tested
 
@@ -54,7 +50,6 @@ appendix/A0_identity_skeleton/
 - Separation of inference and persistence authority
 - Integrity of append-only lineage
 
----
 
 ## Assumptions
 
@@ -63,7 +58,6 @@ appendix/A0_identity_skeleton/
 - No performance optimizations
 - Deterministic execution order
 
----
 
 ## Relation to Core Architecture
 
@@ -81,7 +75,6 @@ Does Not Redefine:
 - Recovery orchestration
 - Governance layers beyond minimal commit gate
 
----
 
 ## Execution
 
@@ -89,14 +82,12 @@ Does Not Redefine:
 python code/run_minimal_loop.py
 ```
 
----
 
 ## Inputs
 
 - Synthetic user request
 - Deterministic proposal generation
 
----
 
 ## Outputs
 
@@ -104,7 +95,6 @@ python code/run_minimal_loop.py
 - Explicit commit decisions
 - Append-only lineage growth
 
----
 
 ## Evaluation Criteria
 
@@ -120,10 +110,7 @@ Invalid:
 - Inference gaining write authority
 - Query evaluation on persistent structures
 
----
 
 ## Status
 
 Prototype v1 — minimal executable boundary demonstrator.
-
----

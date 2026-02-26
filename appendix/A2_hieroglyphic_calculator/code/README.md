@@ -1,4 +1,6 @@
-# Appendix 2 — Hieroglyphic Calculator  
+# Appendix 2 — Hieroglyphic Calculator
+
+
 ## Code Reference Implementation
 
 This directory contains a **minimal academic reference implementation** of the Hieroglyphic Calculator used in Appendix 2.
@@ -9,7 +11,6 @@ It is not a production-ready engine.
 
 It is a structural demonstration of invariant-bound transformation control.
 
----
 
 ## Purpose of the Code
 
@@ -23,7 +24,6 @@ The code exists to demonstrate that:
 
 This is a proof-of-boundary implementation.
 
----
 
 ## What This Code Does
 
@@ -37,7 +37,6 @@ The reference implementation:
 
 It demonstrates invariant preservation under controlled transformation pressure.
 
----
 
 ## What This Code Does NOT Do
 
@@ -54,7 +53,6 @@ This code does not:
 
 Primitive computation must be delegated to deterministic external systems (see Appendix 3).
 
----
 
 ## Architectural Position
 
@@ -74,7 +72,6 @@ It does not redefine:
 - Domain mathematics.
 - Reasoning orchestration.
 
----
 
 ## Execution Model
 
@@ -91,7 +88,6 @@ The typical flow is:
 All state changes are explicit.
 No implicit mutation is allowed.
 
----
 
 ## Design Constraints
 
@@ -103,7 +99,6 @@ No implicit mutation is allowed.
 
 If behavior appears “too simple,” that is intentional.
 
----
 
 ## Why This Implementation Is Minimal
 
@@ -121,7 +116,6 @@ It is intentionally:
 
 Any attempt to extend this into a solver would violate its purpose.
 
----
 
 ## Relationship to Other Appendices
 
@@ -137,7 +131,6 @@ Appendix 2 — Hieroglyphic Calculator
 Appendix 3 — Reasoning Orchestrator  
 → Delegation of primitive computation to external systems.
 
----
 
 ## Important Warning
 
@@ -151,7 +144,6 @@ If you need:
 
 You must use external deterministic systems and keep Persistent Reasoning as the governance layer.
 
----
 
 ## Closing
 

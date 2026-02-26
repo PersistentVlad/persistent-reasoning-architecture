@@ -2,8 +2,6 @@
 ## AIContext  
 **Proof Type:** Invariant Preservation
 
----
-
 ## 1. Context Summary
 
 This appendix defines a minimal structural environment in which transformation steps are governed by explicit invariants.
@@ -19,8 +17,6 @@ Its purpose is to demonstrate that:
 - invalid reasoning steps can be structurally blocked.
 
 This appendix supports the Persistent Reasoning core by proving invariant preservation under controlled transformation.
-
----
 
 ## 2. Formal State Model
 
@@ -45,8 +41,6 @@ Transition is valid if and only if:
 
 If any condition fails, transition is rejected.
 
----
-
 ## 3. Structural Invariants
 
 Invariants in this appendix are:
@@ -66,8 +60,6 @@ Invariant categories may include:
 Invariants are not inferred.
 They are declared and enforced.
 
----
-
 ## 4. Transformation Rules
 
 Transformation rules:
@@ -82,8 +74,6 @@ Unregistered transformations are forbidden.
 
 No dynamic rule synthesis is allowed.
 
----
-
 ## 5. Non-Queryability Guard
 
 This appendix enforces:
@@ -97,8 +87,6 @@ The system does not attempt to "solve" inconsistencies.
 
 It only accepts or rejects transformations.
 
----
-
 ## 6. Failure Conditions
 
 A failure is defined structurally, not numerically.
@@ -111,8 +99,6 @@ Failure occurs if:
 - State history is rewritten.
 
 Failure indicates structural breach.
-
----
 
 ## 7. Boundary Conditions
 
@@ -129,8 +115,6 @@ Primitive computation must be delegated externally.
 
 The Hieroglyphic Calculator enforces constraints.
 It does not compute answers.
-
----
 
 ## 8. Architectural Relationship
 
@@ -152,8 +136,6 @@ Does Not Redefine:
 - External domain solvers
 - LLM reasoning systems
 
----
-
 ## 9. Structural Guarantees
 
 If implemented correctly, this appendix guarantees:
@@ -169,8 +151,6 @@ It does not guarantee:
 - Completeness of transformation rules
 - Performance efficiency
 - Semantic equivalence
-
----
 
 ## 10. Architectural Impact
 

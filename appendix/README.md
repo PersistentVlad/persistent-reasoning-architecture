@@ -12,16 +12,13 @@ The goal is to remove ambiguity.
 Each piece moves the architecture one step closer to something that could survive production -
 not by becoming more powerful, but by becoming more disciplined.
 
----
-
 ## Structure
 
 Appendix Series Map:
-BLOCK I — Structural Foundations
+**BLOCK I — Structural Foundations**
 * A0: Identity Skeleton → Proof of boundary.
 * A1: Identity Formalization & Merge Scenarios → Proof of structural consistency.
-
----
+* A2: Hieroglyphic Calculator (Academic Boundary Case) → Proof of invariant preservation.
 
 ## Reading Order and Directory Structure
 
@@ -29,8 +26,6 @@ BLOCK I — Structural Foundations
 appendix/
 ├── README.md
 ├── A0_identity_skeleton/
-└── A1_identity_formalization/
-
+├── A1_identity_formalization/
+└── A2_hieroglyphic_calculator/
 ```
-
----

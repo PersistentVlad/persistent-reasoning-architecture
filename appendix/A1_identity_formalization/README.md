@@ -5,7 +5,6 @@
 
 https://vladislavbliznyukov.medium.com/persistent-reasoning-appendix-1-identity-formalization-merge-scenarios-1b2ff6825bac
 
----
 
 ## Purpose
 
@@ -18,7 +17,6 @@ Demonstrate that identity:
 - survives merge under governance discipline,
 - collapses only under structural violation.
 
----
 
 ## Scope
 
@@ -35,7 +33,6 @@ This appendix formalizes:
 
 It does not define semantic equivalence or ontology resolution.
 
----
 
 ## Directory Structure
 
@@ -56,7 +53,6 @@ appendix/A1_identity_formalization/
     └── demo_merge_scenarios.py
 ```
 
----
 
 ## What Is Being Tested
 
@@ -66,7 +62,6 @@ appendix/A1_identity_formalization/
 - Explicit collision detection
 - Structural definition of identity collapse
 
----
 
 ## Assumptions
 
@@ -75,7 +70,6 @@ appendix/A1_identity_formalization/
 - Merge requires explicit governance
 - Collision must block commit
 
----
 
 ## Relation to Core Architecture
 
@@ -94,7 +88,6 @@ Does Not Redefine:
 - Knowledge graph alignment
 - Recovery orchestration
 
----
 
 ## Execution
 
@@ -102,7 +95,6 @@ Does Not Redefine:
 python code/demo_merge_scenarios.py
 ```
 
----
 
 ## Inputs
 
@@ -110,7 +102,6 @@ python code/demo_merge_scenarios.py
 - Simulated branch modifications
 - Controlled merge proposals
 
----
 
 ## Outputs
 
@@ -119,7 +110,6 @@ python code/demo_merge_scenarios.py
 - Merge decision traces
 - Collapse detection scenarios
 
----
 
 ## Evaluation Criteria
 
@@ -135,10 +125,7 @@ Invalid:
 - Lineage rewrite
 - Ambiguous reconstruction
 
----
 
 ## Status
 
 Structural consistency demonstrator — Appendix Block I.
-
----
