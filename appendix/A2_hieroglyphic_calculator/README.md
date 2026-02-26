@@ -103,6 +103,13 @@ The Hieroglyphic Calculator operates under the following assumptions:
 Concurrency, distributed reasoning, and semantic reconciliation are out of scope.
 
 
+## Execution
+
+```
+python code/src/demo_runs.py
+```
+
+
 ## Evaluation Criteria
 
 A transformation sequence is valid if:
