@@ -106,13 +106,41 @@ Primitive computation must be delegated to deterministic external systems.
 ---
 
 ## 7. Repository Structure
+
 ```
-appendix/A2_hieroglyphic_calculator/ README.md AIContext.md diagrams/ code/
+appendix/
+ └── A2_hieroglyphic_calculator/
+     ├── README.md
+     ├── AIContext.md
+     ├── diagrams/
+     │    ├── calculator_boundary.mmd
+	 │    ├── invariant_envelope.mmd
+     │    ├── forbidden_solver_paths.mmd
+     │    └── orchestrator_callout.mmd
+     │
+     ├── code/
+     │    ├── README.md
+     │    ├── src/
+     │    │    ├── __init__.py
+     │    │    ├── invariants.py
+     │    │    ├── transforms.py
+     │    │    ├── state.py
+     │    │    ├── checker.py
+     │    │    ├── orchestrator_stub.py
+     │    │    └── demo_runs.py
+     │    │	 
+     │    └── tests/
+     │         ├── test_invariants.py
+     │         ├── test_transforms.py
+     │         └── test_failure_modes.py
+     │
+     └── runs/
+          ├── README.md
+          └── sample_outputs/
+               ├── run_01_valid.txt
+			   ├── run_02_invalid_drift.txt
+               └── run_03_wrong_path_solver.txt
 ```
-- `README.md` — Human-facing explanation of scope and boundary.
-- `AIContext.md` — Formal model of invariants, state, and transformation rules.
-- `diagrams/` — Structural illustrations of invariant preservation.
-- `code/` — Minimal academic reference implementation.
 
 ---
 
