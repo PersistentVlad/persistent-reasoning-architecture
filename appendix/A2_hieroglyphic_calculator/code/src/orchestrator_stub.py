@@ -1,4 +1,7 @@
+# Copyright (c) 2026 Vladislav Bliznyukov
+# Licensed under the MIT License.
 # persistent-reasoning-architecture/appendix/A2_hieroglyphic_calculator/code/src/orchestrator_stub.py
+
 """
 Orchestrator stub for Appendix A2 — Hieroglyphic Calculator.
 

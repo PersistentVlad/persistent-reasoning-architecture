@@ -2,36 +2,30 @@
 %% Purpose: Define the layered invariant envelope that constrains what may persist.
 
 flowchart TB
-  %% Persistent envelope
-  subgraph E[Invariant Envelope (Persistent)]
-    A[Axioms / Base invariants]
-    SC[Scope / Applicability]
-    AT[Allowed transformations]
-    FT[Forbidden transformations]
-    RP[Revision protocol\nproposal → commit → lineage]
+  subgraph E["Invariant Envelope (Persistent)"]
+    A["Axioms / Base invariants"]
+    SC["Scope / Applicability"]
+    AT["Allowed transformations"]
+    FT["Forbidden transformations"]
+    RP["Revision protocol<br/>proposal → commit → lineage"]
 
-    %% Structural relations inside the envelope
     A --> AT
     SC --> AT
     A --> FT
     SC --> FT
 
-    %% Revision governs all layers
     RP --> A
     RP --> SC
     RP --> AT
     RP --> FT
   end
 
-  %% Inference interacts with envelope but cannot mutate it
-  I[Inference / Orchestrator] -->|navigate / read| E
-  I --> CS[Candidate step]
+  I["Inference / Orchestrator"] -->|navigate / read| E
+  I --> CS["Candidate step"]
   CS -->|checked against| E
   E -->|admissible or violation| I
 
-  %% Forbidden mutation paths
-  I -. forbidden: mutate axioms .-> A
-  I -. forbidden: mutate transforms .-> AT
-  I -. forbidden: mutate forbidden set .-> FT
-  I -. forbidden: bypass revision .-> RP
-```0
+  I -.->|mutate axioms forbidden| A
+  I -.->|mutate transforms forbidden| AT
+  I -.->|mutate forbidden set forbidden| FT
+  I -.->|bypass revision forbidden| RP

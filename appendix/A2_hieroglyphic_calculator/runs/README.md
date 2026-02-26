@@ -75,20 +75,30 @@ From inside the A2 code directory:
 python -m src.demo_runs
 ```
 Transcripts will be written into this directory.
-What These Runs Prove
+
+---
+
+## What These Runs Prove
 They prove that:
-Invalid structural mutations can be blocked deterministically.
-Solver-like collapse can be detected at policy level.
-State transitions require admissibility checks before persistence.
-The envelope protects identity continuity.
+- Invalid structural mutations can be blocked deterministically.
+- Solver-like collapse can be detected at policy level.
+- State transitions require admissibility checks before persistence.
+- The envelope protects identity continuity.
+
 They do not prove:
-Mathematical correctness.
-Solver completeness.
-Computational efficiency.
-Semantic equivalence.
-Important Clarification
+- Mathematical correctness.
+- Solver completeness.
+- Computational efficiency.
+- Semantic equivalence.
+
+---
+
+## Important Clarification
 These runs are intentionally simple.
+
 They are not benchmarks. They are not evaluation metrics. They are not performance demonstrations.
 They are structural behavior demonstrations.
+
 Appendix 2 is an academic boundary case.
+
 Its purpose is to show how invariants survive transformation pressure — not how to solve arithmetic.

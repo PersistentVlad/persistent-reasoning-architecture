@@ -2,9 +2,13 @@
 ## Academic Boundary Case  
 **Proof Type:** Invariant Preservation
 
+## Related Publication
+
+https://vladislavbliznyukov.medium.com/persistent-reasoning-appendix-2-hieroglyphic-calculator-ea4934a12984
+
 ---
 
-## 1. Purpose
+## Purpose
 
 This appendix introduces the Hieroglyphic Calculator as an academic boundary case within the Persistent Reasoning architecture.
 
@@ -19,7 +23,7 @@ This appendix serves as a proof that invalid reasoning steps can become structur
 
 ---
 
-## 2. Scope
+## Scope
 
 This appendix focuses on:
 
@@ -39,7 +43,58 @@ Arithmetic is used strictly as a minimal and controlled boundary domain.
 
 ---
 
-## 3. Assumptions
+## Directory Structure
+
+```
+appendix/A2_hieroglyphic_calculator/
+├── README.md
+├── AIContext.md
+├── diagrams/
+│    ├── calculator_boundary.mmd
+│    ├── invariant_envelope.mmd
+│    ├── forbidden_solver_paths.mmd
+│    └── orchestrator_callout.mmd
+│
+├── code/
+│    ├── README.md
+│    ├── src/
+│    │    ├── __init__.py
+│    │    ├── invariants.py
+│    │    ├── transforms.py
+│    │    ├── state.py
+│    │    ├── checker.py
+│    │    ├── orchestrator_stub.py
+│    │    └── demo_runs.py
+│    │	 
+│    └── tests/
+│         ├── test_invariants.py
+│         ├── test_transforms.py
+│         └── test_failure_modes.py
+│
+└── runs/
+  ├── README.md
+  └── sample_outputs/
+	   ├── run_01_valid.txt
+	   ├── run_02_invalid_drift.txt
+	   └── run_03_wrong_path_solver.txt
+```
+
+---
+
+## What Is Being Tested
+
+This appendix tests whether:
+
+1. Structural invariants can be externalized from reasoning.
+2. Transformations can be restricted to a declared rule set.
+3. Invalid transformation attempts are blocked deterministically.
+4. State continuity can be preserved under transformation pressure.
+
+It is not testing numerical performance or computational completeness.
+
+---
+
+## Assumptions
 
 The Hieroglyphic Calculator operates under the following assumptions:
 
@@ -54,20 +109,7 @@ Concurrency, distributed reasoning, and semantic reconciliation are out of scope
 
 ---
 
-## 4. What Is Being Tested
-
-This appendix tests whether:
-
-1. Structural invariants can be externalized from reasoning.
-2. Transformations can be restricted to a declared rule set.
-3. Invalid transformation attempts are blocked deterministically.
-4. State continuity can be preserved under transformation pressure.
-
-It is not testing numerical performance or computational completeness.
-
----
-
-## 5. Evaluation Criteria
+## Evaluation Criteria
 
 A transformation sequence is valid if:
 
@@ -87,7 +129,7 @@ Failure is defined structurally, not numerically.
 
 ---
 
-## 6. What This Appendix Does Not Redefine
+## What This Appendix Does Not Redefine
 
 This appendix does not redefine:
 
@@ -105,46 +147,7 @@ Primitive computation must be delegated to deterministic external systems.
 
 ---
 
-## 7. Repository Structure
-
-```
-appendix/
- └── A2_hieroglyphic_calculator/
-     ├── README.md
-     ├── AIContext.md
-     ├── diagrams/
-     │    ├── calculator_boundary.mmd
-	 │    ├── invariant_envelope.mmd
-     │    ├── forbidden_solver_paths.mmd
-     │    └── orchestrator_callout.mmd
-     │
-     ├── code/
-     │    ├── README.md
-     │    ├── src/
-     │    │    ├── __init__.py
-     │    │    ├── invariants.py
-     │    │    ├── transforms.py
-     │    │    ├── state.py
-     │    │    ├── checker.py
-     │    │    ├── orchestrator_stub.py
-     │    │    └── demo_runs.py
-     │    │	 
-     │    └── tests/
-     │         ├── test_invariants.py
-     │         ├── test_transforms.py
-     │         └── test_failure_modes.py
-     │
-     └── runs/
-          ├── README.md
-          └── sample_outputs/
-               ├── run_01_valid.txt
-			   ├── run_02_invalid_drift.txt
-               └── run_03_wrong_path_solver.txt
-```
-
----
-
-## 8. Architectural Impact
+## Architectural Impact
 
 Supports:
 - Explicit invariant modeling

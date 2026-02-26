@@ -1,4 +1,5 @@
 # A1 — Identity Formalization & Merge Scenarios
+**Proof Type:** Structural Consistency
 
 ## Related Publication
 
@@ -38,7 +39,7 @@ It does not define semantic equivalence or ontology resolution.
 
 ## Directory Structure
 
-```text
+```
 appendix/A1_identity_formalization/
 ├── README.md
 ├── AIContext.md

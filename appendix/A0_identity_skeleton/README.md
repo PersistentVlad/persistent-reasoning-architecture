@@ -1,4 +1,5 @@
 # A0 — Identity Skeleton
+**Proof Type:** Boundary
 
 ## Related Publication
 

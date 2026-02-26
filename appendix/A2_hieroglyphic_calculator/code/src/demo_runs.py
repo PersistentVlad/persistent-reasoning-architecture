@@ -1,4 +1,7 @@
+# Copyright (c) 2026 Vladislav Bliznyukov
+# Licensed under the MIT License.
 # persistent-reasoning-architecture/appendix/A2_hieroglyphic_calculator/code/src/demo_runs.py
+
 """
 Appendix A2 — Hieroglyphic Calculator
 Demo runs producing deterministic, copy-pastable outputs.
