@@ -1,0 +1,12 @@
+======== RUN 01 — VALID ========
+HEAD: state_001 payload={'kind': 'add', 'args': [{'kind': 'const', 'value': 2}, {'kind': 'add', 'args': [{'kind': 'const', 'value': 2}, {'kind': 'const', 'value': 3}]}, {'kind': 'const', 'value': 1}]}
+PROPOSE: flatten:add -> check=True ()
+COMMIT: state_002
+PROPOSE: normalize:consts_last -> check=True ()
+COMMIT: state_003
+[orch step 1] COMMIT: state_004 via combine_consts:add
+[orch step 2] COMMIT: state_005 via normalize:consts_last
+[orch step 3] COMMIT: state_006 via normalize:consts_last
+[orch step 4] COMMIT: state_007 via normalize:consts_last
+[orch step 5] COMMIT: state_008 via normalize:consts_last
+FINAL: state_008 payload={'kind': 'const', 'value': 8}

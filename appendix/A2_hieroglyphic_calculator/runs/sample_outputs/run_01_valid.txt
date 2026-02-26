@@ -1,0 +1,100 @@
+=== Appendix A2 / Hieroglyphic Calculator ===
+Run: run_01_valid
+Mode: academic-boundary
+Seed: deterministic
+--------------------------------------------
+
+[initial]
+expr_id: E0
+expr: Add(
+        Mul(Const(2), Sym("x")),
+        Mul(Const(2), Sym("x"))
+      )
+notes:
+- structure is symbolic
+- no evaluation is performed
+- constants are limited to small non-negative ints (scope)
+
+[invariants: pre-check]
+- I1: Allowed node types .................. OK
+- I2: Const domain (non-negative, small) .. OK
+- I3: No Solve() / No Evaluate() .......... OK
+- I4: Canonical ordering .................. OK
+- I5: No hidden query interface ........... OK
+
+[step 1]
+proposed_transform: FLATTEN_ADD
+input:  Add(A, Add(B, C))
+output: Add(A, B, C)
+applied_to: root Add(...)
+result:
+expr_id: E1
+expr: Add(
+        Mul(Const(2), Sym("x")),
+        Mul(Const(2), Sym("x"))
+      )
+delta:
+- flatten_add: no-op (already flat)
+
+[invariants: check]
+- I1 ...................................... OK
+- I2 ...................................... OK
+- I3 ...................................... OK
+- I4 ...................................... OK
+- I5 ...................................... OK
+commit: ACCEPT
+lineage: E0 -> E1
+
+[step 2]
+proposed_transform: NORMALIZE_MUL
+rule: Mul(Const(k), Sym(x)) -> Mul(Const(k), Sym(x))  (canonical form)
+applied_to: both Mul nodes
+result:
+expr_id: E2
+expr: Add(
+        Mul(Const(2), Sym("x")),
+        Mul(Const(2), Sym("x"))
+      )
+delta:
+- normalize_mul: no-op (already canonical)
+
+[invariants: check]
+- I1 ...................................... OK
+- I2 ...................................... OK
+- I3 ...................................... OK
+- I4 ...................................... OK
+- I5 ...................................... OK
+commit: ACCEPT
+lineage: E1 -> E2
+
+[step 3]
+proposed_transform: COMBINE_LIKE_TERMS
+rule (structural): Add(Mul(Const(a), t), Mul(Const(b), t)) -> Mul(Const(a+b), t)
+target:
+- t := Sym("x")
+- a := 2, b := 2
+result:
+expr_id: E3
+expr: Mul(Const(4), Sym("x"))
+delta:
+- removed: Add( Mul(2,x), Mul(2,x) )
+- added:   Mul(4,x)
+
+[invariants: check]
+- I1 ...................................... OK
+- I2 ...................................... OK  (4 within constant scope)
+- I3 ...................................... OK
+- I4 ...................................... OK
+- I5 ...................................... OK
+commit: ACCEPT
+lineage: E2 -> E3
+
+[final]
+expr_id: E3
+expr: Mul(Const(4), Sym("x"))
+summary:
+- structure preserved
+- no evaluation occurred
+- transformations were admissible
+--------------------------------------------
+END RUN: run_01_valid

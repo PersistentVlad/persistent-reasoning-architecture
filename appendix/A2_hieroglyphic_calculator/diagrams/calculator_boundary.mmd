@@ -1,0 +1,25 @@
+%% File: persistent-reasoning-architecture/appendix/A2_hieroglyphic_calculator/diagrams/calculator_boundary.mmd
+%% Purpose: Show A2 as an architectural boundary case (not a solver, not a UI, not a KG).
+
+flowchart LR
+  %% Actors / entrypoint
+  U[User task / query] --> O[Reasoning Orchestrator / Inference]
+
+  %% Proposal path
+  O -->|proposes| P[Proposal\n(candidate step / revision)]
+  P --> G[PR Governance / Commit Gate]
+  G -->|commit| L[(Append-only Lineage)]
+  L --> S[A2: Hieroglyphic Calculator Store\n(invariants + admissible transforms)]
+
+  %% Navigation (read) path
+  O -->|navigate / read| S
+  S -->|returns: allowed transforms\n+ violation signals| O
+
+  %% Optional external compute
+  O -->|optional call| X[External solver / tool\n(CAS / theorem prover / numeric)]
+  X -->|results| O
+
+  %% Forbidden paths (architectural prohibitions)
+  O -. forbidden: direct write .-> S
+  X -. forbidden: mutate invariants .-> S
+  S -. forbidden: "solve" / "answer" .-> U

@@ -1,0 +1,8 @@
+======== RUN 03 — WRONG PATH (SOLVER-LIKE) ========
+HEAD: state_001 payload={'kind': 'mul', 'args': [{'kind': 'add', 'args': [{'kind': 'const', 'value': 2}, {'kind': 'const', 'value': 2}]}, {'kind': 'const', 'value': 3}]}
+PROPOSE: solve_eval_all payload={'kind': 'const', 'value': 12}
+CHECK: ok=False reasons=('solver_like_transform_forbidden',)
+EXPECTED: blocked before commit
+
+NOTE: This is the point of A2.
+The calculator boundary case is not about computing answers; it is about making certain drift paths architecturally illegal.

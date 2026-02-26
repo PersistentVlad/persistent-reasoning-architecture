@@ -1,0 +1,28 @@
+%% File: persistent-reasoning-architecture/appendix/A2_hieroglyphic_calculator/diagrams/forbidden_solver_paths.mmd
+%% Purpose: Explicitly illustrate what MUST NOT happen in A2 (solver leakage into PR core).
+
+flowchart TB
+
+  U[User Task\n(e.g., 2 + 2 = ?)] --> O[Inference / Orchestrator]
+
+  O -->|attempt: treat A2 as solver| S[A2: Hieroglyphic Calculator]
+
+  %% Forbidden expectation
+  S -. forbidden: compute answer .-> R[Return numeric result]
+
+  %% Forbidden mutation
+  O -. forbidden: auto-store computed result .-> L[(Append-only Lineage)]
+
+  %% Forbidden shortcut
+  O -. forbidden: derive new rule from example .-> S
+
+  %% Correct path
+  O -->|optional call| X[External Solver / Deterministic Engine]
+  X -->|returns result| O
+  O -->|propose structural update| G[Governance]
+  G -->|commit| L
+  L --> S
+
+  %% Visual grouping
+  classDef forbidden stroke:#b22222,stroke-width:2px,stroke-dasharray: 5 5;
+  class S,R,L forbidden;

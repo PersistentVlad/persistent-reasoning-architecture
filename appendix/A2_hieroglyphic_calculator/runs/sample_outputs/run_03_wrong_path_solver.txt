@@ -1,0 +1,69 @@
+=== Appendix A2 / Hieroglyphic Calculator ===
+Run: run_03_wrong_path_solver
+Mode: academic-boundary
+Seed: deterministic
+--------------------------------------------
+
+[initial]
+expr_id: E0
+expr: Add(
+        Const(2),
+        Const(2)
+      )
+notes:
+- This looks "solvable" but A2 forbids solver semantics.
+- The system may still apply structural transforms, but must not collapse to a computed value.
+
+[invariants: pre-check]
+- I1: Allowed node types .................. OK
+- I2: Const domain (non-negative, small) .. OK
+- I3: No Solve() / No Evaluate() .......... OK
+- I4: Canonical ordering .................. OK
+- I5: No hidden query interface ........... OK
+
+[step 1]
+proposed_transform: SOLVE
+intent: "compute constant result"
+candidate_output:
+expr: Const(4)
+
+[invariants: check]
+- I1 ...................................... OK
+- I2 ...................................... OK
+- I3: Forbidden transform id .............. FAIL
+  reason: "SOLVE" is explicitly forbidden (solver collapse)
+- I4 ...................................... UNKNOWN (not evaluated; short-circuit)
+- I5 ...................................... OK
+
+commit: REJECT
+rejection_class: FORBIDDEN_SOLVER_PATH
+lineage: E0 -> (no commit)
+
+[step 2]
+proposed_transform: EVALUATE_CONSTANT_FOLD
+intent: "constant folding"
+candidate_output:
+expr: Const(4)
+
+[invariants: check]
+- I1 ...................................... OK
+- I2 ...................................... OK
+- I3: Forbidden transform id .............. FAIL
+  reason: "EVALUATE_CONSTANT_FOLD" forbidden; same collapse by another name
+- I4 ...................................... UNKNOWN (not evaluated; short-circuit)
+- I5 ...................................... OK
+
+commit: REJECT
+rejection_class: FORBIDDEN_SOLVER_PATH
+lineage: E0 -> (no commit)
+
+[final]
+expr_id: E0
+expr: Add(Const(2), Const(2))
+summary:
+- solver-like shortcuts rejected
+- structure is intentionally retained
+- this is the academic boundary: invariants > convenience
+--------------------------------------------
+END RUN: run_03_wrong_path_solver
+```0

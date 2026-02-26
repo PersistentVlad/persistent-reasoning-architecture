@@ -1,0 +1,28 @@
+%% File: persistent-reasoning-architecture/appendix/A2_hieroglyphic_calculator/diagrams/orchestrator_callout.mmd
+%% Purpose: Show the correct delegation pattern — Orchestrator handles solving, A2 enforces invariants.
+
+flowchart LR
+
+  U[User Query] --> O[Reasoning Orchestrator]
+
+  %% Step 1: navigate invariant envelope
+  O -->|read invariants / allowed transforms| S[A2: Invariant Store]
+
+  %% Step 2: delegate primitive compute
+  O -->|call primitive task| X[External Solver / Tool]
+
+  X -->|result| O
+
+  %% Step 3: validate structural admissibility
+  O -->|propose structural effect| P[Proposal]
+  P --> G[Governance / Commit Gate]
+  G -->|append-only commit| L[(Lineage)]
+  L --> S
+
+  %% Explicit separation
+  S -. does NOT compute .- O
+  S -. does NOT answer user .- U
+  X -. does NOT modify invariants .- S
+
+  classDef separation stroke:#1e90ff,stroke-width:2px,stroke-dasharray: 4 4;
+  class S,X separation;

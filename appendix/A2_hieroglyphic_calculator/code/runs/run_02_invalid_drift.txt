@@ -1,0 +1,9 @@
+======== RUN 02 — INVALID DRIFT (REJECT) ========
+HEAD: state_001 payload={'kind': 'add', 'args': [{'kind': 'const', 'value': 2}, {'kind': 'const', 'value': 2}]}
+PROPOSE: manual_inject payload={'kind': 'add', 'args': [{'kind': 'const', 'value': 2}, {'kind': 'const', 'value': -1}]}
+CHECK: ok=False reasons=('negative_const_forbidden',)
+EXPECTED: reject
+
+PROPOSE: eval_and_solve_everything
+CHECK: ok=False reasons=('solver_like_transform_forbidden',)
+EXPECTED: reject

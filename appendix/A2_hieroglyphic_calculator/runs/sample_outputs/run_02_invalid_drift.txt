@@ -1,0 +1,66 @@
+=== Appendix A2 / Hieroglyphic Calculator ===
+Run: run_02_invalid_drift
+Mode: academic-boundary
+Seed: deterministic
+--------------------------------------------
+
+[initial]
+expr_id: E0
+expr: Add(
+        Sym("x"),
+        Const(1)
+      )
+
+[invariants: pre-check]
+- I1: Allowed node types .................. OK
+- I2: Const domain (non-negative, small) .. OK
+- I3: No Solve() / No Evaluate() .......... OK
+- I4: Canonical ordering .................. OK
+- I5: No hidden query interface ........... OK
+
+[step 1]
+proposed_transform: INTRODUCE_NEGATIVE_CONST
+intent: "simplify by moving terms"
+candidate_output:
+expr: Add(
+        Sym("x"),
+        Const(-1)
+      )
+
+[invariants: check]
+- I1 ...................................... OK
+- I2: Const domain ........................ FAIL
+  reason: Const(-1) violates scope (non-negative constants only)
+- I3 ...................................... OK
+- I4 ...................................... OK
+- I5 ...................................... OK
+
+commit: REJECT
+rejection_class: OUT_OF_SCOPE_CONSTANT
+lineage: E0 -> (no commit)
+
+[step 2]
+proposed_transform: MAGIC_SIMPLIFY   (unknown / unregistered)
+candidate_output:
+expr: Sym("x")   (attempted erase of +1)
+
+[invariants: check]
+- I1 ...................................... OK
+- I2 ...................................... OK
+- I3: Forbidden transform id .............. FAIL
+  reason: transform_id not in allowlist; resembles solver shortcut
+- I4 ...................................... UNKNOWN (not evaluated; short-circuit)
+- I5 ...................................... OK
+
+commit: REJECT
+rejection_class: FORBIDDEN_OR_UNKNOWN_TRANSFORM
+lineage: E0 -> (no commit)
+
+[final]
+expr_id: E0
+expr: Add(Sym("x"), Const(1))
+summary:
+- two drift attempts rejected
+- structure remained unchanged
+--------------------------------------------
+END RUN: run_02_invalid_drift
